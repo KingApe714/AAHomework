@@ -1,0 +1,7 @@
+<header>All Users</header>
+
+<ul>
+    <%@users.each do |user|%>
+        <%= href: user_url(user.id)%>
+    <%end%>
+</ul>
