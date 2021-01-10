@@ -1,6 +1,6 @@
 class GoalsController < ApplicationController
     
-    before_action :require_logged_in, only: [:create, :index]
+    before_action :require_logged_in
     
     def create
         @goal = Goal.new(goal_params)
@@ -15,8 +15,8 @@ class GoalsController < ApplicationController
     def destroy
         @goal = current_user.goals.find_by(id: params[:id])
         if @goal && @goal.destroy
+            redirect_to(users_url)
         end
-        redirect_to(users_url)
     end
 
     def goal_params

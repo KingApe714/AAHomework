@@ -9,6 +9,7 @@
 class Goal < ApplicationRecord
 
     validates :name, :details, presence: true
+    validates :status, inclusion: [true, false]
 
     belongs_to :user,
         primary_key: :id,

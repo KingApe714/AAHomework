@@ -2,6 +2,8 @@
 
 <ul>
     <%@users.each do |user|%>
-        <%= href: user_url(user.id)%>
+        <li>
+            <a href="<%= user_url(user) %>"> <%= user.username %> </a>
+        </li>
     <%end%>
 </ul>

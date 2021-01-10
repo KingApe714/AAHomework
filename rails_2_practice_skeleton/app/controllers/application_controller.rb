@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
-    def login(user)
+
+  helper_method :logged_in?
+  def login(user)
     #assign session_token and give it as a cookie to the client's browser 
     session[:session_token] = user.reset_session_token! #a method 
     #putting a key-value pair into the session hash 
